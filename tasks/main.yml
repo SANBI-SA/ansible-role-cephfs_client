@@ -6,4 +6,4 @@
 # Server configuration.
 - include_tasks: checks.yml
 - include_tasks: 00_software.yml
-- include_tasks: 01_mount.yml
+- include_tasks: 01_mounts.yml

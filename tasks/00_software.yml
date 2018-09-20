@@ -8,7 +8,7 @@
   apt_repository:
     repo: "deb https://download.ceph.com/debian-luminous/ {{ ansible_distribution_release }} main"
 
-- name: Install base software set
+- name: Install cephfs kernel module software
   apt:
     name: "{{ item }}"
     state: present
