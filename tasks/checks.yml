@@ -1,0 +1,17 @@
+---
+
+- name: Test internet connectivity on host "{{ group_names[0] }}"
+  wait_for:
+    host: google.com
+    port: 443
+    state: started
+    delay: 0
+    timeout: 3
+
+- name: Test storage connectivity on host "{{ group_names[0] }}"
+  wait_for:
+    host: ceph-mon1.sanbi.ac.za
+    port: 6789
+    state: started
+    delay: 0
+    timeout: 3

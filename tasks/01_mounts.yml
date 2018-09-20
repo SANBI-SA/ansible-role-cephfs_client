@@ -1,0 +1,24 @@
+---
+
+- name: Ensure ceph directory exists
+  file:
+    path: /etc/ceph
+    state: directory
+    mode: 0700
+
+- block:
+  - name: Create secret file for CephFS user directory
+    copy:
+      content: "{{ item['key'] }}"
+      dest: "/etc/ceph/cephfs_{{ item['id'] }}_secret"
+      force: no
+    loop: "{{ cephfs_client_mapping }}"
+
+  - name: CephFS directory mappings
+    mount:
+      path: "{{ item['dst'] }}"
+      src: ceph-mon1.sanbi.ac.za,ceph-mon2.sanbi.ac.za,ceph-mon3.sanbi.ac.za:6789:"{{ item['src'] }}"
+      fstype: ceph
+      opts: "name=people,secretfile=/etc/ceph/cephfs_{{ item['id'] }}_secret,_netdev"
+      state: mounted
+    loop: "{{ cephfs_client_mapping }}"
