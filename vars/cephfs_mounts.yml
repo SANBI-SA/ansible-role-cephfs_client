@@ -1,5 +1,4 @@
 ---
 
 cephfs_client_mapping:
-  - {"src": "/tools", "dst": "/tools", "id": "", "key": ""}
   - {"src": "/people", "dst": "/usr/people", "id": "", "key": ""}
