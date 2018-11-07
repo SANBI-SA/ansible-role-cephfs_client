@@ -17,7 +17,7 @@
   - name: CephFS directory mappings
     mount:
       path: "{{ item['dst'] }}"
-      src: "ceph-mon1.sanbi.ac.za,ceph-mon2.sanbi.ac.za,ceph-mon3.sanbi.ac.za:6789:{{ item['src'] }}"
+      src: "{{ ceph_monitor | join(',') }}:6789:{{ item['src'] }}"
       fstype: ceph
       opts: "name={{ item['id'] }},secretfile=/etc/ceph/cephfs_{{ item['id'] }}_secret,_netdev"
       state: mounted

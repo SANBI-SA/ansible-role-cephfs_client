@@ -10,7 +10,7 @@
 
 - name: Test storage connectivity on host "{{ group_names[0] }}"
   wait_for:
-    host: ceph-mon1.sanbi.ac.za
+    host: "{{ ceph_monitor[0] }}"
     port: 6789
     state: started
     delay: 0
