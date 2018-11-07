@@ -1,4 +1,0 @@
----
-
-cephfs_client_mapping:
-  - {"src": "/people", "dst": "/usr/people", "id": "", "key": ""}

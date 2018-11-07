@@ -1,0 +1,13 @@
+---
+
+# List of ceph machines to mount from
+ceph_monitor:
+  - "ceph-mon1.sanbi.ac.za"
+  - "ceph-mon2.sanbi.ac.za"
+  - "ceph-mon3.sanbi.ac.za"
+
+# The directories you want to mount from the cephfs to the target machine
+cephfs_client_mapping:
+  - {"src": "/people", "dst": "/usr/people", "id": "", "key": ""}
+
+# use_ceph_fuse: False
