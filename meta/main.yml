@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: sanbi-sa.munge
+  role_name: sanbi-sa.cephfs_client
   author: Eugene de Beste
   description: CephFS client support for SANBI servers
   company: South African National Bioinformatics Institute, University of the Western Cape
