@@ -1,0 +1,11 @@
+galaxy_info:
+  role_name: sanbi-sa.munge
+  author: Eugene de Beste
+  description: CephFS client support for SANBI servers
+  company: South African National Bioinformatics Institute, University of the Western Cape
+  license: MIT
+  
+  min_ansible_version: 1.2
+  galaxy_tags: []
+
+dependencies: []
